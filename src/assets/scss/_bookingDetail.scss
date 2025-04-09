@@ -1,0 +1,164 @@
+@use "variables" as *;
+
+.p-24 {
+  padding: 24px;
+}
+
+.title-padding {
+  padding: 15px 0px 15px 5px;
+}
+
+.description-text {
+  margin: 0;
+  opacity: 0.7;
+  font-size: 16px;
+}
+
+.activity_details_main {
+  .time-slots {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    .time-slot {
+      display: flex;
+      justify-content: space-between;
+      background: #f5f5f5;
+      padding: 10px;
+      border-radius: 10px;
+      align-items: center;
+      width: 100%;
+      .time {
+        font-size: 1rem;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+        text-align: left;
+
+        .availability {
+          font-size: 0.875rem;
+          color: $theme-color;
+        }
+      }
+      .book-btn {
+        background: $theme-color;
+        padding: 10px 15px;
+        border-radius: 10px;
+        color: $font-color;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+      }
+    }
+  }
+
+  .cancellation_policy_main {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .activity_heading {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .activity_heading h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    width: 90%;
+  }
+
+  .activity_heading p {
+    background: $theme-color;
+    padding: 10px 10px;
+    width: 110px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50px;
+    color: $font-color;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .accordion-item {
+    background: #f5f5f5;
+    border: 1px solid rgb(74, 116, 138, 0.4);
+    border-radius: 10px !important;
+    overflow: hidden;
+  }
+
+  .accordion-header,
+  .accordion-body {
+    background: #f5f5f5;
+    padding: 0;
+  }
+
+  .accordion-item .accordion-body {
+    padding-top: 15px;
+    margin-top: 0px;
+    border-top: 1px solid rgb(40, 40, 40, 0.4);
+  }
+
+  .accordion-item .accordion-collapse {
+    padding: 0 20px 20px 20px;
+  }
+
+  .accordion-header .accordion-button {
+    padding: 20px;
+    background: #f5f5f5;
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+    color: #282828;
+    font-weight: 600;
+  }
+
+  .accordion-item .accordion-body .config-div {
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+    // list-style: none;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .accordion-item .accordion-body p:last-child {
+    margin: 0;
+  }
+}
+
+.booking-card .activity_details {
+  width: 94% !important;
+  margin: 0 3% 0 !important;
+}
+
+.search_calender .activity_time_slot_main {
+  flex-direction: row !important;
+  .activity_time_slot {
+    width: 100%;
+  }
+}
+
+.no-slots-div {
+  text-align: center;
+  padding: 22px;
+  background: whitesmoke;
+  margin-top: 14px;
+  border-radius: 5px;
+  span {
+    font-size: 16px;
+    font-weight: 600;
+    color: $theme-color;
+  }
+}

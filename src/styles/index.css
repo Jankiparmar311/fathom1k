@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.each-slide-effect {
+    display: flex;
+    justify-content: center;
+}
+
+.each-slide-effect>img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    border: 1px solid rgba(144, 144, 144, 1);
+    border-radius: 15px;
+    width: 100%;
+}

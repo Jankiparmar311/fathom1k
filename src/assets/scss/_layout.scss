@@ -1,0 +1,29 @@
+.footer {
+  text-align: center;
+  padding: 15px 0;
+  background: white;
+  position: relative;
+
+  &__container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &__line {
+    flex: 1;
+    height: 1px;
+    background: #b1c1ca;
+  }
+
+  &__text {
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+  }
+
+  &__logo {
+    height: 18px; // Adjust based on your logo size
+  }
+}

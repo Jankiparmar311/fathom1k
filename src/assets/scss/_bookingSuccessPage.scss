@@ -1,0 +1,43 @@
+@use "variables" as *;
+
+.booking-success {
+  padding: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .success-container {
+    text-align: center;
+
+    .success-image {
+      width: 350px;
+      height: 255px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: 700;
+      color: $theme-color;
+      margin-bottom: 30px;
+    }
+
+    .booking-id {
+      font-size: 18px;
+      color: #282828;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .back-button {
+      background: $theme-color;
+      color: $font-color;
+      border: none;
+      padding: 13px 65px;
+      font-size: 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+}

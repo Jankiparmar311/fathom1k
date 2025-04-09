@@ -1,0 +1,478 @@
+@use "variables" as *; // Import your variables file
+
+* {
+  font-family: "Urbanist", serif;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem; // Equivalent to Tailwind's gap-4
+
+  @media (min-width: 768px) {
+    // md breakpoint (default Tailwind md: 768px)
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1024px) {
+    // lg breakpoint (default Tailwind lg: 1024px)
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.header {
+  background: $theme-color;
+  height: 80px;
+  padding: 20px 24px 16px 22px;
+  // border-radius: 1rem 1rem 0rem 0rem;
+
+  i {
+    color: $font-color;
+  }
+
+  span {
+    font-family: $font-urbanist;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 36px;
+    color: $font-color;
+    text-align: left;
+  }
+}
+
+.header-logo {
+  background: $theme-color;
+  height: 80px;
+  // padding: 20px 24px 16px 80px;
+  padding: 10px 24px 24px 100px;
+
+  // border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.img-logo {
+  height: 56px;
+}
+
+.website-logo {
+  height: 40px;
+  margin-top: 10px;
+}
+// Responsive styles
+@media (max-width: $tablet) {
+  .header {
+    height: 70px;
+    padding: $space-sm;
+
+    span {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .header {
+    height: 60px;
+
+    span {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+  .tab-container #activity_tab {
+    gap: 1px !important;
+    button {
+      font-size: 13px !important;
+    }
+  }
+}
+
+.tab-container {
+  padding: $space-lg;
+  text-align: center;
+  overflow-y: auto;
+
+  #activity_tab {
+    margin: 0 auto $space-md;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #eeeeee;
+    border-radius: 999px; // Fully rounded
+
+    button {
+      padding: 12px 30px;
+      border-radius: 50px; // Fully rounded
+      color: #282828;
+      opacity: 0.7;
+      font-size: 18px;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.3s ease-in-out;
+      border: none;
+      cursor: pointer;
+
+      &.active {
+        background: $theme-color;
+        color: white !important;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.tab-container::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+.tab-container::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.tab-container::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+#bookNowPopup .modal-body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $theme-color;
+}
+
+// Responsive styles
+@media (max-width: $tablet) {
+  .tab-container {
+    padding: $space-md;
+
+    #activity_tab {
+      width: 100%;
+      gap: $space-sm;
+      height: 50px;
+
+      button {
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.grid-container .booking-card .slideshow-container .each-slide-effect img,
+.grid-container .booking-card .slideshow-container video {
+  height: 255px;
+}
+
+.activity_details_main
+  .booking-card
+  .slideshow-container
+  .each-slide-effect
+  img,
+.activity_details_main .booking-card .slideshow-container video {
+  height: 415px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.booking-card {
+  position: relative;
+
+  .slideshow-container {
+    position: relative;
+    margin-bottom: -40px;
+    .each-slide-effect img,
+    video {
+      width: 100%;
+      // height: 300px;
+      border-radius: 10px;
+      // height: 255px;
+      object-fit: cover;
+    }
+    .prev-arrow,
+    .next-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s;
+      z-index: 10;
+      img {
+        height: 12px;
+        width: 12px;
+      }
+      &:hover {
+        background: rgb(221 221 221);
+        // filter: brightness(0.5); // Lighten effect
+      }
+    }
+    .prev-arrow {
+      left: 10px;
+      img {
+        position: absolute;
+        left: 7px;
+      }
+    }
+    .next-arrow {
+      right: 10px;
+      img {
+        position: absolute;
+        left: 9px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .details-card {
+      width: 100%;
+      margin: -30px auto 0;
+      padding: 12px;
+    }
+    .date-selection {
+      flex-wrap: wrap;
+      justify-content: center;
+      .date-item {
+        width: 22%;
+        font-size: 14px;
+        padding: 6px;
+      }
+    }
+    .time-slots .time-slot {
+      flex-direction: column;
+      align-items: center;
+      .book-btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.activity_details {
+  z-index: 9;
+  margin: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 15px;
+  position: relative;
+  /* top: -50px; */
+  color: #282828;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 15px;
+
+  ul.activity_img_dot {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    li {
+      height: 6px;
+      width: 100%;
+      background: $theme-color;
+      display: inline-block;
+      border-radius: 50px;
+      opacity: 0.4;
+    }
+    .indicator-line {
+      width: 100%;
+      height: 6px;
+      background: $theme-color;
+      margin: 0 5px;
+      border-radius: 50px;
+      opacity: 0.4;
+      cursor: pointer;
+      transition: background 0.3s;
+      &.active {
+        background: $theme-color;
+        opacity: 1;
+      }
+    }
+  }
+  .activity_heading {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 15px;
+    text-align: left;
+  }
+
+  .activity_heading h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    width: 90%;
+  }
+
+  .activity_heading p {
+    background: $theme-color;
+    padding: 10px 10px;
+    width: 110px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50px;
+    color: $font-color;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .date_select {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    li.arrow_li {
+      width: 38px !important;
+      cursor: pointer;
+    }
+    li.active {
+      border: 1px solid $theme-color;
+      background: rgb(74, 116, 138, 0.1);
+      color: $theme-color;
+    }
+    li {
+      background: #fff;
+      border: 1px solid #b0b0b0;
+      height: 50px;
+      width: 18%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      cursor: pointer;
+      p {
+        margin: 0;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .activity_time_slot_main {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .activity_time_slot {
+    align-items: center;
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 12px;
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .book-btn {
+    background: $theme-color;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: $font-color;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    // width: 120px !important;
+  }
+
+  .activity_time_slot p {
+    font-size: 16px;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0;
+    font-weight: 600;
+    text-align: left;
+    // width: 100%;
+  }
+
+  .description_text {
+    text-align: left;
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .description {
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .activity_time_slot p span {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .activity_time_slot p .text_blue {
+    color: $theme-color;
+  }
+
+  .activity_time_slot p .text_red {
+    color: #d90000;
+  }
+
+  .read_more_link {
+    text-align: right;
+    a {
+      text-decoration: underline;
+      font-size: 16px;
+      font-weight: 500;
+      color: $theme-color;
+    }
+  }
+}
+
+.no-activities {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Full viewport height */
+  width: 100%;
+  grid-column: 1 / -1; /* Ensure it spans the full grid */
+  text-align: center;
+}
+
+.call-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: $theme-color;
+  color: $font-color;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+.call-button i {
+  font-size: 18px;
+}

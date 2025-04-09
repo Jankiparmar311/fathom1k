@@ -1,0 +1,89 @@
+:root {
+  --primary-color: #4a748a;
+  --secondary-color: #2c5367;
+  --theme-color: linear-gradient(
+    120deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  --font-color: #ffffff;
+  --calendar_available_date_circle_color: rgba(233, 238, 240, 0.88);
+  --calendar_selected_date_circle_color: #2c5367;
+  --calendar_full_booked_date_circle_color: rgba(233, 238, 240, 0.88);;
+  --available-font-color: #000000;
+  --booked-font-color: #000000;
+  --selected-font-color: #000000;
+}
+
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$theme-color: var(--theme-color);
+$font-color: var(--font-color);
+$calendar_available_date_circle_color: var(
+  --calendar_available_date_circle_color
+);
+$calendar_selected_date_circle_color: var(--calendar_selected_date_circle_color);
+$calendar_full_booked_date_circle_color: var(--calendar_full_booked_date_circle_color);
+
+$available_font_color: var(--available-font-color);
+$booked_font_color: var(--booked-font-color);
+$selected_font_color: var(--selected-font-color);
+
+$color-black-100: #091d37;
+$color-black-50: #69717a;
+$color-black: #000000;
+$color-primary: #aecf6d;
+$color-secondary: #334266;
+$color-grey-200: #71757a;
+$color-grey-100: #888e9a;
+$color-grey-90: #e6e8ec;
+$color-grey-80: #eff0f1;
+$color-grey-70: #f2f3f5;
+$color-grey-60: #f3f3f3;
+$color-grey-50: #eceef3;
+$color-green-10: #f5f8e9;
+$color-white: #ffffff;
+$color-red: red;
+
+// Colors
+// $primary-color: rgba(74, 116, 138, 1);
+// $secondary-color: #2c5367;
+// $gradient-bg: linear-gradient(
+//   120deg,
+//   rgba(74, 116, 138, 1) 0%,
+//   rgba(44, 83, 103, 1) 100%
+// );
+$background-light: #f8f9fa;
+$text-dark: #333;
+$text-light: #fff;
+$border-color: #ccc;
+
+$button-gradient: linear-gradient(
+  92.94deg,
+  $primary-color 0%,
+  $secondary-color 100%
+);
+$font-urbanist: "Urbanist", sans-serif;
+
+// Font Sizes
+$font-sm: 12px;
+$font-md: 14px;
+$font-lg: 16px;
+$font-xl: 20px;
+
+// Spacing
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+
+// Border Radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+// Breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 1024px;
